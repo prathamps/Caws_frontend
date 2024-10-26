@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Project Management</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<header>
+			<h1>Project Management System</h1>
+		</header>
+
+		<section id="auth-section">
+			<h2>Authentication</h2>
+			<form id="login-form">
+				<input type="email" id="email" placeholder="Email" required />
+				<input type="password" id="password" placeholder="Password" required />
+				<button type="submit">Login</button>
+			</form>
+			<button id="logout-btn">Logout</button>
+		</section>
+
+		<section id="project-section">
+			<h2>Your Projects</h2>
+			<div id="projects"></div>
+			<form id="create-project-form">
+				<input
+					type="text"
+					id="project-name"
+					placeholder="Project Name"
+					required
+				/>
+				<button type="submit">Create Project</button>
+			</form>
+		</section>
+
+		<section id="file-section">
+			<h2>Files</h2>
+
+			<form id="file-upload-form">
+				<input type="file" id="file-input" accept="image/*" required />
+				<button type="submit">Upload File</button>
+			</form>
+			<div id="files"></div>
+		</section>
+
+		<section id="comments-section">
+			<h2>Comments</h2>
+			<form id="add-comment-form">
+				<textarea
+					id="comment-input"
+					placeholder="Add comment"
+					required
+				></textarea>
+				<label> <input type="checkbox" id="has-drawing" /> Has Drawing </label>
+				<button type="submit">Add Comment</button>
+			</form>
+			<div id="comments"></div>
+		</section>
+
+		<script src="./js/app.js" type="module"></script>
+	</body>
+</html>

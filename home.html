@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Collaboration</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            padding: 0 20px;
+        }
+
+        .main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            background-color: #1e1e1e;
+        }
+
+        .main-header .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .main-header nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .main-header nav ul li {
+            margin-left: 20px;
+        }
+
+        .main-header nav ul li a {
+            color: #bb86fc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .main-header nav ul li a:hover {
+            color: #ffffff;
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .hero .content {
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease;
+        }
+
+        .hero p {
+            margin-bottom: 20px;
+            font-size: 1.2em;
+            color: #bbbbbb;
+        }
+
+        .hero .buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .hero .btn {
+            padding: 12px 24px;
+            border-radius: 5px;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .hero .btn:hover {
+            transform: scale(1.05);
+        }
+
+        .btn {
+            background-color: #6200ea;
+        }
+
+        .btn.secondary {
+            background-color: #333333;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-top: 20px;
+            animation: fadeInUp 1s ease;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .gallery h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .gallery-images {
+            display: flex;
+            flex-direction: column; /* Vertical layout */
+            align-items: center;
+            gap: 20px;
+        }
+
+        /* Image Row */
+        .image-row {
+            display: flex;
+            justify-content: center; /* Center the images */
+            gap: 30px; /* Increased gap between images */
+        }
+
+        .gallery-image {
+            width: 300px; /* Fixed width for images */
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+            cursor: pointer; /* Show pointer on hover */
+        }
+
+        .gallery-image:hover {
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        .main-footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #1e1e1e;
+            color:white;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+            }
+
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .gallery-images {
+                align-items: center;
+            }
+
+            .gallery-image {
+                width: 90%; /* Full width on smaller screens */
+                max-width: 300px; /* Limit max width */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="main-header">
+        <div class="logo">Video Image Collaboration Tool</div>
+        <nav>
+            <ul>
+                <li><a href="#">Product</a></li>
+                <li><a href="#">Integrations</a></li>
+                <li><a href="#">Enterprise</a></li>
+                <li><a href="#">Resources</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Sign In</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="content">
+            <h1>Next Generation Creative Collaboration</h1>
+            <p>Our platform is a central hub that lets you share media, track feedback, and streamline workflows so your team can work closely together from anywhere.</p>
+            <div class="buttons">
+                <a href="#" class="btn">Start Free Trial</a>
+                <a href="#" class="btn secondary">Explore V4 Beta</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://img.freepik.com/premium-photo/video-editing-software-mobile-app-tiny-people-editing-film_1029473-768745.jpg" alt="Collaboration Image">
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery">
+        <h2>Explore Our Features</h2>
+        <div class="gallery-images">
+            <div class="image-row">
+                <img src="https://images.iskysoft.com/filmora-video-editor/topic/video-editors/video-editor-app.png" alt="Feature 1" class="gallery-image">
+                <img src="https://i.pcmag.com/imagery/roundups/07zK5ZMCRXxdm3S7ZnlT3Xw-10..v1650989183.jpg" alt="Feature 2" class="gallery-image">
+            </div>
+            <div class="image-row">
+                <img src="https://images.prismic.io/mojo-website/1be710d8-71bb-48a4-a165-d85cacba659e_pexels-lisa-fotios-1092671.jpg?auto=compress,format&q=90&w=1040&fm=jpeg" alt="Feature 3" class="gallery-image">
+                <img src="https://animationexplainers.com/wp-content/uploads/2022/03/Video-Editing-App.jpg" alt="Feature 4" class="gallery-image">
+            </div>
+            <div class="image-row">
+                <img src="https://cdni.iconscout.com/illustration/premium/preview/mobile-photo-editor-app-illustration-download-in-svg-png-gif-file-formats--blogger-logo-application-picture-editing-selfie-pack-people-illustrations-4817101.png?f=webp&h=700" alt="Feature 5" class="gallery-image">
+                <img src="https://plugins-media.makeupar.com/smb/blog/post/2022-08-09/41ac877d-fc1d-4d71-b0d3-b0574c178362.jpg" alt="Feature 6" class="gallery-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="main-footer">
+        <p>&copy; 2023 Video Image Collaboration Tool. All rights reserved.</p>
+        <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Support</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Blog</a></li>
+        </ul>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const galleryImages = document.querySelectorAll(".gallery-image");
+            galleryImages.forEach(image => {
+                image.addEventListener("click", () => {
+                    // Reset other images
+                    galleryImages.forEach(img => {
+                        img.style.transform = "scale(1)";
+                    });
+                    // Enlarge the clicked image
+                    image.style.transform = "scale(1.2)";
+                    image.style.transition = "transform 0.3s ease";
+                });
+            });
+        });
