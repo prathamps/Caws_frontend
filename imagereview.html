@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="./css/imagereview.css" />
+	</head>
+	<body>
+		<div class="navbar_image_review">
+			<div>&lt; Image name</div>
+			<div></div>
+		</div>
+
+		<div class="main_container">
+			<div id="canvas_container">
+				<canvas id="lower_canvas" width="600" height="600"> </canvas>
+				<img
+					src="./images/collaboration.jpg"
+					class="image"
+					id="viewport_image"
+				/>
+			</div>
+			<div class="comment_section_container">
+				<div class="comment_card_container">
+					<div class="comment_card_content">
+						<div class="card">
+							<div class="card-header">
+								<div class="avatar">P</div>
+								<div class="username">Pratham P S</div>
+								<div class="time">3h</div>
+							</div>
+							<div class="card-content">
+								<p>Test</p>
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-header">
+								<div class="avatar">P</div>
+								<div class="username">Pratham P S</div>
+								<div class="time">3h</div>
+							</div>
+							<div class="card-content">
+								<p>Test</p>
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-header">
+								<div class="avatar">P</div>
+								<div class="username">Pratham P S</div>
+								<div class="time">3h</div>
+							</div>
+							<div class="card-content">
+								<p>Test</p>
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-header">
+								<div class="avatar">P</div>
+								<div class="username">Pratham P S</div>
+								<div class="time">3h</div>
+							</div>
+							<div class="card-content">
+								<p>Test</p>
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-header">
+								<div class="avatar">P</div>
+								<div class="username">Pratham P S</div>
+								<div class="time">3h</div>
+							</div>
+							<div class="card-content">
+								<p>Test</p>
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-header">
+								<div class="avatar">P</div>
+								<div class="username">Pratham P S</div>
+								<div class="time">3h</div>
+							</div>
+							<div class="card-content">
+								<p>Test</p>
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-header">
+								<div class="avatar">P</div>
+								<div class="username">Pratham P S</div>
+								<div class="time">3h</div>
+							</div>
+							<div class="card-content">
+								<p>Test</p>
+							</div>
+						</div>
+
+						<div class="card">
+							<div class="card-header">
+								<div class="avatar">P</div>
+								<div class="username">Pratham P S</div>
+								<div class="time">3h</div>
+							</div>
+							<div class="card-content">
+								<p>Test</p>
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-header">
+								<div class="avatar">P</div>
+								<div class="username">Pratham P S</div>
+								<div class="time">3h</div>
+							</div>
+							<div class="card-content">
+								<p>Test</p>
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-header">
+								<div class="avatar">P</div>
+								<div class="username">Pratham P S</div>
+								<div class="time">3h</div>
+							</div>
+							<div class="card-content">
+								<p>Test</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="comment_main_container">
+			<div class="comment_container">
+				<div class="comment_input_container">
+					<img src="./images/collaboration.jpg" width="30" height="30" />
+
+					<textarea
+						class="comment_input"
+						id="comment"
+						name="comment"
+						rows="4"
+						cols="50"
+						placeholder="Write your comment here..."
+					></textarea>
+				</div>
+				<div class="comment_tools_container">
+					<div class="comment_tools_left_container">
+						<div>
+							<label class="tool-btn">
+								<input
+									type="radio"
+									class="tool_radio_button"
+									name="dtool"
+									value="line"
+									checked
+								/>
+								<img
+									width="20"
+									height="20"
+									type="button"
+									class="tool_button"
+									id="clear"
+									src="assets/icons/emoji.png"
+								/>
+							</label>
+						</div>
+					</div>
+					<div class="comment_tools_right_container">
+						<div class="color_tool">
+							<div class="color_tool_popover">
+								<div class="color_tool_pop_element"></div>
+								<div class="color_tool_pop_element"></div>
+								<div class="color_tool_pop_element"></div>
+								<div class="color_tool_pop_element"></div>
+								<div class="color_tool_pop_element"></div>
+								<div class="color_tool_pop_element"></div>
+							</div>
+						</div>
+						<div>
+							<label class="tool-btn">
+								<input
+									type="radio"
+									class="tool_radio_button"
+									name="dtool"
+									value="line"
+									checked
+								/>
+								<img
+									width="18"
+									height="20"
+									type="button"
+									class="tool_button"
+									id="clear"
+									src="assets/icons/line_tool.png"
+								/>
+							</label>
+							<label class="tool-btn">
+								<input
+									type="radio"
+									class="tool_radio_button"
+									name="dtool"
+									value="rect"
+								/>
+								<img
+									width="20"
+									height="20"
+									type="button"
+									class="tool_button"
+									id="clear"
+									src="assets/icons/rect_tool.png"
+								/>
+							</label>
+							<label class="tool-btn">
+								<input
+									type="radio"
+									class="tool_radio_button"
+									name="dtool"
+									value="pencil"
+								/>
+								<img
+									width="20"
+									height="20"
+									type="button"
+									class="tool_button"
+									id="clear"
+									src="assets/icons/pencil_tool.png"
+								/>
+							</label>
+						</div>
+
+						<img
+							width="15"
+							height="20"
+							type="button"
+							class="tool_button coptions"
+							id="clear"
+							src="assets/icons/trash.png"
+						/>
+
+						<button class="send_button coptions" id="save" tabindex="0">
+							Send
+							<img width="18" height="18" src="assets/icons/send_arrow.png" />
+						</button>
+
+						<img
+							type="button"
+							width="20"
+							height="20"
+							src="assets/icons/pencil_tool.png"
+							class="render coptions"
+							id="add"
+						/>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="./js/imagereview.js"></script>
+	</body>
+</html>

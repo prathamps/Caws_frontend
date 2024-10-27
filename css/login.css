@@ -61,7 +61,7 @@ button[type="submit"] {
 	margin-top: 15px;
 	border: none;
 	border-radius: 5px;
-	background-color: #6200ea;
+	background: linear-gradient(45deg, #a45945, #ff9a76);
 	color: #ffffff;
 	font-size: 16px;
 	cursor: pointer;
@@ -79,13 +79,22 @@ p {
 }
 
 p a {
-	color: #bb86fc;
+	color: #a45945;
 	text-decoration: none;
 	transition: color 0.3s ease;
 }
 
 p a:hover {
 	color: #ffffff;
+}
+
+.return {
+	position: fixed;
+	top: 10px;
+	left: 10px;
+	font-weight: 800;
+	font-size: 2rem;
+	color: #a45945;
 }
 
 /* Fade-in Animation for Form */

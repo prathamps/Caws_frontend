@@ -20,32 +20,3 @@ window.onload = async () => {
 		console.log("User is authenticated.")
 	}
 }
-
-// User Login
-document.getElementById("login-form").onsubmit = async (e) => {
-	e.preventDefault()
-	const email = document.getElementById("email").value
-	const password = document.getElementById("password").value
-
-	const response = await fetch(`${backendUrl}/account/login`, {
-		method: "POST",
-		headers: { "Content-Type": "application/json" },
-		credentials: "include",
-		body: JSON.stringify({ email, password }),
-	})
-
-	if (response.ok) {
-		alert("Logged in successfully!")
-		window.location.href = "dashboard.html"
-	} else {
-		alert("Failed to login.")
-	}
-}
-
-// Logout
-document.getElementById("logout-btn").onclick = async () => {
-	const response = await fetch(`${backendUrl}/account/logout`, {
-		method: "POST",
-	})
-	if (response.ok) alert("Logged out successfully!")
-}

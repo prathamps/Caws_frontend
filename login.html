@@ -7,15 +7,17 @@
 		<link rel="stylesheet" href="./css/login.css" />
 	</head>
 	<body>
-		<div class="form-container">
-			<h2>Welcome Back!</h2>
+		<a href="home.html" class="return">&lt</a>
+		<section id="auth-section">
+			<h2>Login</h2>
 			<form id="login-form">
-				<input type="email" id="login-email" placeholder="Email" required />
-				<button type="submit">Log In</button>
+				<input type="email" id="email" placeholder="Email" required />
+				<input type="password" id="password" placeholder="Password" required />
+				<button type="submit">Login</button>
 			</form>
 			<p>Don't have an account? <a href="signup.html">Sign up here</a></p>
-		</div>
+		</section>
 
-		<script src="scripts.js"></script>
+		<script src="./js/authentication.js" type="text/javascript"></script>
 	</body>
 </html>

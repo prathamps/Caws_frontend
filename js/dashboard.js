@@ -1,3 +1,5 @@
+const backendUrl = "http://localhost:3000"
+
 let project_id
 let selectedFileId
 // Logout
@@ -5,7 +7,10 @@ document.getElementById("logout-btn").onclick = async () => {
 	const response = await fetch(`${backendUrl}/account/logout`, {
 		method: "POST",
 	})
-	if (response.ok) alert("Logged out successfully!")
+	if (response.ok) {
+		alert("Logged out successfully!")
+		window.location.href = "home.html"
+	}
 }
 
 //Fetching User Data
@@ -39,9 +44,12 @@ document.getElementById("create-project-form").onsubmit = async (e) => {
 		body: JSON.stringify({ name: projectName }),
 	})
 
-	if (response.ok) loadProjects()
+	if (response.ok) {
+		loadProjects()
+		document.getElementById("add-project-btn").click()
+	}
 }
-
+loadProjects()
 // Load Projects
 async function loadProjects() {
 	const response = await fetch(`${backendUrl}/user/projects`, {
@@ -53,17 +61,17 @@ async function loadProjects() {
 	document.getElementById("projects").innerHTML = projects.projects
 		.map(
 			(p) => `
-    <div>
-      <h3>${p.name}</h3>
-      <button class="project" onclick="selectProject('${p.id}')">Delete</button>
-    </div>
+    
+      <button class="project-button" onclick="selectProject('${p.id}', '${p.name}')">${p.name}</button>
+    
   `
 		)
 		.join("")
 }
 
 // Define the function on the window object
-window.selectProject = function (p_id) {
+window.selectProject = function (p_id, p_name) {
+	document.getElementById("project-heading").innerText = p_name
 	project_id = p_id
 }
 
@@ -107,12 +115,29 @@ async function loadFilesForProject() {
 		document.getElementById("files").innerHTML = files
 			.map(
 				(file) => `
-      <div>
-        <h4>File ID: ${file.id}</h4>
-        <p>Added By: ${file.addedBy}</p>
-        <p>Has Drawing: ${file.hasDrawing}</p>
-        <img src="${file.downloadURL}" alt="Uploaded File Image" style="max-width: 300px; max-height: 300px;" />
-        <button onclick="loadComments('${file.projectId}','${file.id}')">View Comments</button>
+      <div class="image-card" >
+		<div class="image-card-img-container">	
+        <img src="${file.downloadURL}" alt="${file.addedBy}" style="max-width: 300px; max-height: 300px;" />
+		</div>	
+		<div class="image-actions">
+			<button class="image-button" onclick="toggleImageAction(this)">
+				<img src="./images/open.png" alt="📂" class="file_tool_icon" />
+			</button>
+			<button
+				class="image-button"
+				alt="✏️"
+				onclick="toggleImageAction(this)"
+			>
+				<img src="./images/edit.png" alt="📂" class="file_tool_icon" />
+			</button>
+			<button
+				class="image-button"
+				alt="🗑️"
+				onclick="toggleImageAction(this)"
+			>
+				<img src="./images/trash.png" alt="📂" class="file_tool_icon" />
+			</button>
+		</div>
       </div>
     `
 			)

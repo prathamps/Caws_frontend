@@ -3,62 +3,138 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Project Management</title>
-		<link rel="stylesheet" href="./style.css" />
+		<title>Dashboard</title>
+		<link rel="stylesheet" href="./css/dashboard.css" />
 	</head>
 	<body>
-		<header>
-			<h1>Project Management System</h1>
+		<div class="overlay"></div>
+
+		<!-- Header Section -->
+		<header class="main-header">
+			<div class="logo">
+				<img src="./images/logo.png" class="image_logo" alt="Hero Image" />
+				Sculpt
+			</div>
+			<nav>
+				<button class="menu-toggle" aria-label="Toggle navigation menu">
+					☰
+				</button>
+				<ul class="nav-links">
+					<li>
+						<a href="#Features" aria-label="Key Features">Account Setting</a>
+					</li>
+					<li><a id="logout-btn">Logout</a></li>
+				</ul>
+			</nav>
 		</header>
 
-		<section id="auth-section">
-			<h2>Authentication</h2>
-			<form id="login-form">
-				<input type="email" id="email" placeholder="Email" required />
-				<input type="password" id="password" placeholder="Password" required />
-				<button type="submit">Login</button>
-			</form>
-			<button id="logout-btn">Logout</button>
-		</section>
+		<main class="project-viewport">
+			<section id="project-section">
+				<div class="project-header">
+					<p>Your Projects</p>
+					<button id="add-project-btn">+</button>
+				</div>
 
-		<section id="project-section">
-			<h2>Your Projects</h2>
-			<div id="projects"></div>
-			<form id="create-project-form">
-				<input
-					type="text"
-					id="project-name"
-					placeholder="Project Name"
-					required
-				/>
-				<button type="submit">Create Project</button>
-			</form>
-		</section>
+				<form id="create-project-form" class="hidden">
+					<input
+						type="text"
+						id="project-name"
+						placeholder="Project Name"
+						required
+					/>
+					<button class="create_button" type="submit">Create</button>
+				</form>
+				<div id="projects"></div>
+			</section>
 
-		<section id="file-section">
-			<h2>Files</h2>
+			<section id="file-section">
+				<div id="project-drawer-btn">
+					<img src="./images/drawer.png" width="15" height="15" alt="drawer" />
+				</div>
+				<div class="project-heading-container">
+					<div id="project-heading">Project</div>
+					<div class="file-header">
+						<form id="file-upload-form">
+							<input
+								type="file"
+								class="file-upload"
+								id="file-input"
+								name="file-input"
+								accept="image/*"
+								required
+							/>
+							<button id="upload-file-button" type="submit" hidden>
+								Upload File
+							</button>
+						</form>
+						<button id="add-file-btn">+</button>
+					</div>
+				</div>
+				<div id="files" class="image-container">
+					<div class="image-card" onclick="loadComments('s','s')">
+						<img src="./images/collaboration.jpg" alt="Car" />
+						<div class="image-actions">
+							<button class="image-button" onclick="toggleImageAction(this)">
+								<img src="./images/open.png" alt="📂" class="file_tool_icon" />
+							</button>
+							<button
+								class="image-button"
+								alt="✏️"
+								onclick="toggleImageAction(this)"
+							>
+								<img src="./images/edit.png" alt="✏️" class="file_tool_icon" />
+							</button>
+							<button
+								class="image-button"
+								alt="🗑️"
+								onclick="toggleImageAction(this)"
+							>
+								<img src="./images/trash.png" alt="🗑️" class="file_tool_icon" />
+							</button>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<!-- <script src="./js/authenticate.js" type="module"></script> -->
+		<script>
+			// Toggle mobile menu
+			document
+				.querySelector(".menu-toggle")
+				.addEventListener("click", function () {
+					this.classList.toggle("active")
+					document.querySelector(".nav-links").classList.toggle("show")
+				})
+			document
+				.getElementById("add-project-btn")
+				.addEventListener("click", () => {
+					const form = document.getElementById("create-project-form")
+					form.classList.toggle("hidden")
+				})
 
-			<form id="file-upload-form">
-				<input type="file" id="file-input" accept="image/*" required />
-				<button type="submit">Upload File</button>
-			</form>
-			<div id="files"></div>
-		</section>
+			document.getElementById("add-file-btn").addEventListener("click", () => {
+				console.log("hello")
+				const fileInput = document.getElementById("file-input")
+				fileInput.click()
+				const uploadInput = document.getElementById("upload-file-button")
+				uploadInput.click()
+			}) // Toggle the project-section drawer
+			document
+				.getElementById("project-drawer-btn")
+				.addEventListener("click", () => {
+					const projectSection = document.getElementById("project-section")
+					const overlay = document.querySelector(".overlay")
 
-		<section id="comments-section">
-			<h2>Comments</h2>
-			<form id="add-comment-form">
-				<textarea
-					id="comment-input"
-					placeholder="Add comment"
-					required
-				></textarea>
-				<label> <input type="checkbox" id="has-drawing" /> Has Drawing </label>
-				<button type="submit">Add Comment</button>
-			</form>
-			<div id="comments"></div>
-		</section>
+					projectSection.classList.toggle("open")
+					overlay.classList.toggle("show")
+				})
 
-		<script src="./js/app.js" type="module"></script>
+			// Close drawer when clicking outside (on overlay)
+			document.querySelector(".overlay").addEventListener("click", () => {
+				document.getElementById("project-section").classList.remove("open")
+				document.querySelector(".overlay").classList.remove("show")
+			})
+		</script>
+		<script src="./js/dashboard.js" type="module"></script>
 	</body>
 </html>

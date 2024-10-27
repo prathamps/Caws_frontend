@@ -1,0 +1,328 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	background-color: #121212;
+	color: #ffffff;
+}
+
+/* Header */
+.main-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px;
+	background-color: #1e1e1e;
+}
+
+.logo {
+	font-size: 24px;
+	font-weight: bold;
+	color: #ffffff;
+}
+
+.image_logo {
+	width: 25px;
+	height: 25px;
+}
+
+nav ul {
+	display: flex;
+	list-style: none;
+}
+
+nav ul li {
+	margin-left: 20px;
+}
+
+nav ul li a {
+	color: #ffffff;
+	text-decoration: none;
+	padding: 8px 16px;
+	border-radius: 5px;
+	transition: background-color 0.3s, color 0.3s ease;
+}
+
+nav ul li a:hover {
+	background-color: #a45945;
+}
+
+/* Hamburger button for mobile */
+.menu-toggle {
+	display: none;
+	background: none;
+	border: none;
+	font-size: 24px;
+	color: #a45945;
+	cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	padding: 120px 20px;
+}
+
+.hero h1 {
+	font-size: 2.8em;
+	margin-bottom: 20px;
+	background: linear-gradient(45deg, #a45945, #ff9a76);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: fadeInDown 1s ease;
+}
+
+.hero p {
+	font-size: 1.2em;
+	color: #bbbbbb;
+	margin-bottom: 20px;
+}
+
+.hero .buttons {
+	display: flex;
+	gap: 15px;
+}
+
+.hero .btn {
+	padding: 12px 24px;
+	border-radius: 5px;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: bold;
+	transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-primary {
+	background-color: #a45945;
+}
+
+.btn-primary:hover {
+	background-color: #871f1f;
+}
+
+.btn-secondary {
+	background-color: #333333;
+}
+
+.hero-image img {
+	width: 100%;
+	max-width: 800px;
+	border-radius: 8px;
+	margin-top: 20px;
+	animation: fadeInUp 1s ease;
+}
+
+/* Features Section */
+.features {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 50px 20px;
+}
+
+.features h2 {
+	font-size: 2em;
+	margin-bottom: 20px;
+	background: linear-gradient(45deg, #a45945, #ff9a76);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: fadeInDown 1s ease;
+}
+
+.feature-card {
+	background-color: #1e1e1e;
+	border-radius: 8px;
+	padding: 20px;
+	margin: 20px 0;
+	width: 100%;
+	max-width: 800px;
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+	transform: scale(1.05);
+}
+
+.feature-card img {
+	width: 80px;
+	height: 80px;
+	border-radius: 8px;
+}
+
+.feature-card h3 {
+	color: #ffffff;
+	margin-bottom: 5px;
+}
+
+.feature-card p {
+	color: #bbbbbb;
+}
+
+/* Footer */
+.footer {
+	background-color: #111;
+	color: #ccc;
+	padding: 40px 0;
+	text-align: center;
+	font-family: Arial, sans-serif;
+	width: 100%;
+}
+
+.footer-content {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 20px;
+	display: flex;
+}
+
+.footer-logo {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.5em;
+	font-weight: bold;
+	color: #a45945;
+}
+
+.footer-logo img {
+	width: 35px;
+	height: 35px;
+	margin-right: 10px;
+}
+.footer-second-section {
+	width: 100%;
+}
+.footer-links {
+	display: flex;
+	justify-content: space-around;
+	margin: 20px 0;
+	width: 100%;
+}
+
+.footer-links h4 {
+	color: #a45945;
+}
+
+.footer-links ul {
+	list-style: none;
+	padding: 0;
+}
+
+.footer-links li {
+	margin: 8px 0;
+}
+
+.footer-links a {
+	color: #ccc;
+	text-decoration: none;
+	font-size: 0.9em;
+}
+
+.footer-links a:hover {
+	color: #a45945;
+}
+
+.footer-social {
+	margin-top: 20px;
+}
+
+.footer-social a {
+	color: #ccc;
+	text-decoration: none;
+	margin: 0 10px;
+	font-size: 1.2em;
+}
+
+.footer-social a:hover {
+	color: #a45945;
+}
+
+.footer-bottom {
+	margin-top: 40px;
+	border-top: 1px solid #333;
+	padding-top: 20px;
+	font-size: 0.8em;
+}
+
+.footer-bottom a {
+	color: #ccc;
+	text-decoration: none;
+	margin: 0 5px;
+}
+
+.footer-bottom a:hover {
+	color: #a45945;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+	from {
+		opacity: 0;
+		transform: translateY(-20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+/* Responsive Design */
+
+/* Show the hamburger button on small screens */
+@media (max-width: 768px) {
+	.nav-links {
+		display: none;
+		flex-direction: column;
+		background-color: #1e1e1e;
+		position: absolute;
+		z-index: 10;
+		top: 60px;
+		right: 0;
+		width: 100%;
+		padding: 20px;
+	}
+	.nav-links > li {
+		margin: 1rem;
+	}
+	.menu-toggle {
+		display: block;
+	}
+
+	.menu-toggle.active + .nav-links {
+		display: flex;
+	}
+
+	.hero h1 {
+		font-size: 2em;
+	}
+
+	.feature-card {
+		flex-direction: column;
+		align-items: start;
+	}
+
+	.footer-content {
+		flex-direction: column;
+	}
+}
